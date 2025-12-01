@@ -14,9 +14,9 @@ let price;
 
 // INPUT
 // Chiedo a User numero km 
-const numKm = parseInt(prompt("Scrivi il numero di chilometri che vuoi percorrere"));
+const numKm = parseFloat(prompt("Scrivi il numero di chilometri che vuoi percorrere"));
 // Chiedo a User età
-const userAge = parseInt(prompt("Scrivi l'età del passeggero"));
+const userAge = parseFloat(prompt("Scrivi l'età del passeggero"));
 console.log(numKm, userAge);
 
 
