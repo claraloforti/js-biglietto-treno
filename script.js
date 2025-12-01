@@ -27,15 +27,10 @@ let priceBase = (numKm * 0.21);
 // Se l'utente è minorenne, applico uno sconto del 20% al prezzo base
 if (userAge < 18) {
     price = priceBase * 0.8;
-}
-
-// Se l'utente ha meno di 65 anni, il prezzo base sarà il prezzo finale dato che non avrà sconti
-else if (userAge < 65) {
-    price = priceBase;
-}
-
-else { // Altrimenti applico uno sconto del 40% al prezzo base
+} else if (userAge > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo base
     price = priceBase * 0.6;
+} else { // Altrimenti il prezzo sarà uguale al prezzo base
+    price = priceBase;
 }
 
 // OUTPUT
