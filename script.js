@@ -24,22 +24,19 @@ console.log(numKm, userAge);
 // Moltiplico il numero km per 0.21 per ottenere prezzo
 price = (numKm * 0.21);
 
-document.getElementById("ticketprice").textContent = "Il prezzo del tuo biglietto è: " +
-    price.toLocaleString("it-IT", { style: "currency", currency: "EUR" });
-
 // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
 if (userAge < 18) {
-    minorDiscount = (price * 0.8);
+    price = (price * 0.8);
 }
 
 // Se l'utente è over 65, applico uno sconto del 40%
 if (userAge >= 65) {
-    minorDiscount = (price * 0.6);
+    price = (price * 0.6);
 }
 
-console.log(minorDiscount);
-
 // OUTPUT
+document.getElementById("ticketprice").textContent = "Il prezzo del tuo biglietto è: " +
+    price.toLocaleString("it-IT", { style: "currency", currency: "EUR" });
 
 
 
