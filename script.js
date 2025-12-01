@@ -9,8 +9,8 @@
 
 
 // SETUP
-// Dichiaro prezzo e prezzo scontato
-let price, minorDiscount;
+// Dichiaro prezzo finale
+let price;
 
 // INPUT
 // Chiedo a User numero km 
@@ -21,19 +21,20 @@ console.log(numKm, userAge);
 
 
 // ELABORAZIONE
-// Moltiplico il numero dei km per 0.21 per ottenere il prezzo
-priceBase = (numKm * 0.21);
+// Moltiplico il numero dei km per 0.21 per ottenere il prezzo base
+let priceBase = (numKm * 0.21);
 
-// Se l'utente è minorenne, applico uno sconto del 20% al prezzo
+// Se l'utente è minorenne, applico uno sconto del 20% al prezzo base
 if (userAge < 18) {
     price = priceBase * 0.8;
 }
 
-// Se l'utente è over 65, applico uno sconto del 40% al prezzo
+// Se l'utente ha meno di 65 anni, il prezzo base sarà il prezzo finale dato che non avrà sconti
 else if (userAge < 65) {
     price = priceBase;
 }
-else {
+
+else { // Altrimenti applico uno sconto del 40% al prezzo base
     price = priceBase * 0.6;
 }
 
