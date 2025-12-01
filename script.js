@@ -22,16 +22,19 @@ console.log(numKm, userAge);
 
 // ELABORAZIONE
 // Moltiplico il numero dei km per 0.21 per ottenere il prezzo
-price = (numKm * 0.21);
+priceBase = (numKm * 0.21);
 
 // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
 if (userAge < 18) {
-    price = (price * 0.8);
+    price = priceBase * 0.8;
 }
 
 // Se l'utente è over 65, applico uno sconto del 40% al prezzo
-if (userAge >= 65) {
-    price = (price * 0.6);
+else if (userAge < 65) {
+    price = priceBase;
+}
+else {
+    price = priceBase * 0.6;
 }
 
 // OUTPUT
