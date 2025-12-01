@@ -8,38 +8,31 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali). 
 
 
-// SETUP
-// Dichiaro prezzo finale
-let price;
 
 // INPUT
 // Chiedo a User numero km 
 const numKm = parseFloat(prompt("Scrivi il numero di chilometri che vuoi percorrere"));
+
 // Chiedo a User età
 const userAge = parseFloat(prompt("Scrivi l'età del passeggero"));
 console.log(numKm, userAge);
 
 
-// ELABORAZIONE
-// Moltiplico il numero dei km per 0.21 per ottenere il prezzo base
-let priceBase = (numKm * 0.21);
+// SETUP
+// Dichiaro prezzo e moltiplico il numero dei km per 0.21 per ottenerlo
+let price = numKm * 0.21;
 
-// Se l'utente è minorenne, applico uno sconto del 20% al prezzo base
+// ELABORAZIONE
+// Se l'utente è minorenne, applico uno sconto del 20% al prezzo
 if (userAge < 18) {
-    price = priceBase * 0.8;
-} else if (userAge > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo base
-    price = priceBase * 0.6;
-} else { // Altrimenti il prezzo sarà uguale al prezzo base
-    price = priceBase;
+    price *= 0.8;
+} else if (userAge > 65) { // Se l'utente è over 65, applico uno sconto del 40% al prezzo
+    price *= 0.6;
 }
 
 // OUTPUT
 document.getElementById("ticketprice").textContent = "Il prezzo del tuo biglietto è: " +
     price.toLocaleString("it-IT", { style: "currency", currency: "EUR" });
-
-
-
-
 
 
 
