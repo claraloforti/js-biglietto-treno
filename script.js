@@ -1,10 +1,10 @@
-// Programma per generare prezzo biglietto del treno
-// Il programma dovrà chiedere all'utente il num.km che vuole percorrere e l'età del passeggero.
+// PROGRAMMA PER GENERARE PREZZO DEL BIGLIETTO DEL TRENO
+// Il programma dovrà chiedere all'utente il numero dei km che vuole percorrere e l'età del passeggero.
 
 // DATI:
-// il prezzo del biglietto è definito in base ai km (0.21 € al km).
-// va applicato uno sconto del 20% per i minorenni
-// va applicato uno sconto del 40% per gli over 65.
+// Il prezzo del biglietto è definito in base ai km (0.21€ al km).
+// Va applicato uno sconto del 20% per i minorenni.
+// Va applicato uno sconto del 40% per gli over 65.
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali). 
 
 
@@ -21,7 +21,7 @@ console.log(numKm, userAge);
 
 
 // ELABORAZIONE
-// Moltiplico il numero km per 0.21 per ottenere prezzo
+// Moltiplico il numero dei km per 0.21 per ottenere il prezzo
 price = (numKm * 0.21);
 
 // Se l'utente è minorenne, applico uno sconto del 20% al prezzo
@@ -29,7 +29,7 @@ if (userAge < 18) {
     price = (price * 0.8);
 }
 
-// Se l'utente è over 65, applico uno sconto del 40%
+// Se l'utente è over 65, applico uno sconto del 40% al prezzo
 if (userAge >= 65) {
     price = (price * 0.6);
 }
